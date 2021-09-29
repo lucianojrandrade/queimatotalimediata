@@ -248,7 +248,7 @@ $(document).ready(function() {
     <span class="titulo_comentario">21 comentários</span>
     <div class="perfil">
         <span class="nome"><img src="imagem/comentarios/1.png">Marcelo Vaz</span>
-        <p>Não tenho nem palavras para agradecer ao plano elaborado do Fabio, o cara manda muito bem, achei que nunca iria conseguir  reverter os estragos da Diabetes tipo 2, maas..... já se foram 5kg em 11 dias, abraços Davi! Obrigado 🙏🏻 <p>
+	    <p>Oi, sou de <span id="cidade1"></span> e não tenho nem palavras para agradecer ao plano elaborado do Fabio, o cara manda muito bem, achei que nunca iria conseguir reverter os estragos da Diabetes tipo 2, maas... já se foram 5kg em 11 dias, abraços Davi! Obrigado 🙏🏻<p>
         <span class="infos">Curtir · Responder · 3 min</span>
     </div>
     <div class="perfil">
@@ -278,7 +278,7 @@ $(document).ready(function() {
     </div>
     <div class="perfil">
         <span class="nome"><img src="imagem/comentarios/7.png">Rafaella de Belo</span>
-        <p>Toda vez que mudo minha alimentação me sinto fraca me sentir fraca...  Será que com o plano do fábio vai funcionar pra mim ??? alguém tbm com essa dúvida ? <p>
+        <p>Toda vez que mudo minha alimentação me sinto fraca me sentir fraca... Será que com o plano do fábio vai funcionar pra mim ??? alguém de <span id="cidade2"></span> já comprou?<p>
         <span class="infos">Curtir · Responder · 31 min</span>
         <div class="perfil perfil2">
             <span class="nome"><img src="imagem/comentarios/8.png">Rubianne Valentini de Oliveira</span>
@@ -287,7 +287,7 @@ $(document).ready(function() {
         </div>
         <div class="perfil perfil2">
             <span class="nome"><img src="imagem/comentarios/9.png">Paula Andrade</span>
-            <p>Pode comprar sem medo amor, eu ja tava cansada ate me sentindo meio incapaz sabe, e simplesmente revolucionou a minha vida! Nunca imaginei que eu conseguiria emagrecer tanto assim mesmo aos 41 anos... já que meu metabolismo é mt lento, não perde tempo, Vai que o preço muda pra mais caro né...<p>
+		<p>Oi linda, eu também sou de <span id="cidade3"></span> pode comprar sem medo amor, eu ja tava cansada ate me sentindo meio incapaz sabe, e simplesmente revolucionou a minha vida! Nunca imaginei que eu conseguiria emagrecer tanto assim mesmo aos 41 anos... já que meu metabolismo é mt lento, não perde tempo, Vai que o preço muda pra mais caro né...<p>
             <span class="infos">Curtir · Responder · 10 min </span>
         </div>
         <div class="perfil perfil2"><span class="nome"><img src="imagem/comentarios/7.png">Rafaella de Belo</span>
@@ -462,7 +462,10 @@ Ainda sigo o plano , e faço os treinos com pulo de corda. recomendo! perde peso
         if (this.status >= 200 && this.status < 400) {
             var data = JSON.parse(this.response);
             let output = data.YourFuckingLocation.replace(/\,.+/g, "$'");
-            document.getElementById("cidade").innerHTML = output;
+            document.getElementById("cidade").innerHTML = output
+	    document.getElementById("cidade1").innerHTML = output;
+	    document.getElementById("cidade2").innerHTML = output;
+	    document.getElementById("cidade3").innerHTML = output;
         } else {}
     };
     request.onerror = function () {};
