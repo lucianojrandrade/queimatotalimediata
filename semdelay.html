@@ -201,7 +201,7 @@ $(document).ready(function() {
 		</section>
 				<div class="elementor-element elementor-element-79102fce elementor-widget elementor-widget-text-editor" data-id="79102fce" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container som">
-								<p style="text-align: center;"> <strong>Por favor, verifique se o som está ligado!</strong></p>	
+								<p style="font-family: 'Roboto',arial,sans-serif;font-weight:bold;text-align:center;font-size:13px"><span id="count" data-foo="1201" style="color: #fff;">1.201</span> pessoas estão assistindo a esse vídeo agora...</p>	
                             </div>
 				</div>
 				<div class="elementor-element elementor-element-68cd9177 elementor-mobile-align-center elementor-align-center button_checkout elementor-invisible elementor-widget elementor-widget-button" data-id="68cd9177" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_mobile&quot;:&quot;none&quot;}" style="display:none" data-widget_type="button.default">
@@ -494,5 +494,33 @@ document.getElementById('data').innerHTML = (dayNames[now.getDay()] + " dia " + 
   };
 
 </script>
+			 <script>
+  let inicio = 1201;
+  let segundos = 3;
+  let acrescimo = 1;
+
+  function addDots(nStr) {
+      nStr += '';
+      x = nStr.split(',');
+      x1 = x[0];
+      x2 = x.length > 1 ? ',' + x[1] : '';
+      var rgx = /(\d+)(\d{3})/;
+      while (rgx.test(x1)) {
+          x1 = x1.replace(rgx, '$1' + '.' + '$2');
+      }
+      return x1 + x2;
+  }
+
+  setInterval(() => {
+
+      let valorAtual = Number($("#count").attr('data-foo'));
+      let novoValor = valorAtual + acrescimo;
+      
+document.querySelector("#count").dataset.foo = novoValor;
+      $("#count").html(addDots(novoValor));
+  }, segundos * 1000)
+
+  
+  </script>
 </body>
 </html>
